@@ -14,14 +14,10 @@ const TopDoctors = () => {
         </p>
         <div className="w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0">
             {doctors.slice(0, 10).map((item) => (
-            <div key={item._id} 
-                onClick={() => {navigate(`/appointment/${item._id}`); scrollTo(0, 0);}}
-                className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500"
-            >
+            <div key={item._id} onClick={() => {navigate(`/appointment/${item._id}`); scrollTo(0, 0);}} className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500">
                 <img className="bg-blue-50" src={item.image} alt="" />
                 <div className="p-4">
-                <div className={`flex items-center gap-2 text-sm ${item.available ? "text-green-500" : "text-gray-400"}`}
-                >
+                <div className={`flex items-center gap-2 text-sm ${item.available ? "text-green-500" : "text-gray-400"}`}>
                     <p className={`w-2 h-2 ${item.available ? "bg-green-500" : "bg-gray-400"} rounded-full`}></p>
                     <p>{item.available ? "Available" : "Not Available"}</p>
                 </div>
@@ -31,13 +27,7 @@ const TopDoctors = () => {
             </div>
             ))}
         </div>
-        <button
-            onClick={() => {
-            navigate("/doctors");
-            scrollTo(0, 0);
-            }}
-            className="bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10"
-        >
+        <button onClick={() => {navigate("/doctors");scrollTo(0, 0);}} className="bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10">
             more
         </button>
         </div>
