@@ -19,7 +19,7 @@ const DoctorContextProvider = ( props ) => {
             const {data} = await axios.get(`${backendUrl}/api/doctor/appointments`, {headers: {token: dToken}});
             if(data.success){
                 setAppointments(data.appointments)
-                console.log(data.appointments);
+                // console.log(data.appointments);
             }
             else{
                 console.error(error.message);
@@ -73,7 +73,7 @@ const DoctorContextProvider = ( props ) => {
             const {data} = await axios.get(`${backendUrl}/api/doctor/dashboard`, {headers: {token: dToken}});
             if(data.success){
                 setDashData(data.dashData);
-                console.log(data.dashData);
+                // console.log(data.dashData);
             }
             else{
                 console.error(data.message);
